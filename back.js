@@ -3,7 +3,7 @@ const getProducts = () => {
         name: document.getElementById("product-name").value,
         description: document.getElementById("product-description").value,
         brand: document.getElementById("product-brand").value,
-        imageUrl: document.getElementById("product-imgae").value,
+        imageUrl: document.getElementById("product-image").value,
         price: document.getElementById("product-price").value,
     };
     let productsToString = JSON.stringify(product);
@@ -11,7 +11,7 @@ const getProducts = () => {
 };
 console.log(getProducts());
 
- const  insertNewProduct = (err) => {
+const insertNewProduct = async (err) => {
     try {
         err.preventDefault();
         let product = getProducts();
@@ -35,4 +35,4 @@ console.log(getProducts());
     } catch (err) {
         alert(error);
     }
-}
+};

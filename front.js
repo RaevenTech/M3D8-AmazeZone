@@ -31,14 +31,14 @@ const newSection = (brands) => {
         let newSection = document.createElement("section");
         newSection.classList.add("container", "brandSection", "px-0");
 
-        let sectionTitle = document.createElement("h2");
-        sectionTitle.classList.add("row", "mx-0");
-        sectionTitle.innerText = brand;
-        newSection.appendChild(sectionTitle);
+        let newSectionHeading = document.createElement("h2");
+        newSectionHeading.classList.add("row", "mx-0");
+        newSectionHeading.innerText = brand;
+        newSection.appendChild(newSectionHeading);
 
-        let productDeck = document.createElement("div");
-        productDeck.classList.add("row", "productsDeck");
-        productDeck.id = brand.toLowerCase();
+        let productCardsDisplay = document.createElement("div");
+        productCardsDisplay.classList.add("row", "insertProduct");
+        productCardsDisplay.id = brand.toLowerCase();
     });
 };
 
@@ -66,17 +66,4 @@ function generateCards(product) {
             </div>
         </div>
     `;
-}
-
-function appendCards(products) {
-    products.forEach((product) => {
-        let sectionToInsert = document.querySelector(
-            `#${product.brand.toLowerCase()}`
-        );
-
-        sectionToInsert.insertAdjacentHTML(
-            "beforeend",
-            `${generateCards(product)}`
-        );
-    });
 }
