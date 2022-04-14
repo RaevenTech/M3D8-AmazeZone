@@ -1,7 +1,6 @@
 const formSubmit = async (event) => {
     console.log(event.target);
     event.preventDefault();
-
     const newFormEvent = {
         name: document.getElementById("name").value,
         description: document.getElementById("description").value,
@@ -9,7 +8,6 @@ const formSubmit = async (event) => {
         imageUrl: document.getElementById("image").value,
         price: document.getElementById("price").value,
     };
-
     const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/product/",
         {
@@ -22,10 +20,8 @@ const formSubmit = async (event) => {
             },
         }
     );
-
     if (response.ok) {
         const body = await response.json();
-
         alert("New item added in store - id: " + body._id);
         console.log(response);
     }

@@ -19,8 +19,8 @@ let firstfucntionPageinfo = async () => {
 
     listgroup.innerHTML = "";
     parsedBody.forEach((userinput) => {
-        let li1 = document.createElement("li");
-        li1.innerHTML = `
+        let newProductCard = document.createElement("li");
+        newProductCard.innerHTML = `
       <li class="list-group-item d-flex justify-content-between align-items-center"
               >
                 <div>
@@ -28,14 +28,14 @@ let firstfucntionPageinfo = async () => {
                   <p>Brand: ${userinput.brand}</p>
                   <p>Description: ${userinput.description}</p>
                   <p><a href="${userinput.imageUrl}">Image</a></p>
-                  <small><p class="unique-id">${userinput._id}</p></small>
+                  <small><p class="product-id">${userinput._id}</p></small>
                   
                   
                 </div>
                <div><span class="badge badge-secondary badge-pill">€${userinput.price}</span></div>
             
               </li>`;
-        listgroup.appendChild(li1);
+        listgroup.appendChild(newProductCard);
     });
 };
 
@@ -43,9 +43,7 @@ window.onload = () => {
     firstfucntionPageinfo();
 };
 
-/* THE DELETE BUTTON FUNCTION 
-
-const options2 = {
+const deleteProductById = {
     method: "DELETE",
     headers: {
         "Content-Type": "application/json",
@@ -56,12 +54,12 @@ const options2 = {
 
 let deleteButtonFunction = async (event) => {
     console.log(
-        event.target.parentElement.parentElement.querySelector(".unique-id")
+        event.target.parentElement.parentElement.querySelector(".product-id")
             .innerText
     );
-    let uniqueId =
+    let productId =
         event.target.parentElement.parentElement.querySelector(
-            ".unique-id"
+            ".product-id"
         ).innerText;
     let uniqueProductName =
         event.target.parentElement.parentElement.querySelector(
@@ -69,8 +67,8 @@ let deleteButtonFunction = async (event) => {
         ).innerText;
 
     const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/product/" + uniqueId,
-        options2
+        "https://striveschool-api.herokuapp.com/api/product/" + productId,
+        deleteProductById
     );
     const parsedBody = await response.json();
     console.log(parsedBody);
@@ -78,13 +76,8 @@ let deleteButtonFunction = async (event) => {
     alert(
         uniqueProductName +
             " has now been deleted. " +
-            "This was the uniqueID: " +
-            uniqueId
+            "This was the productID: " +
+            productId
     );
     window.location.reload();
-
-     <div>
-                <span class="badge badge-primary badge-pill">$${userinput.price}</span>
-                <i class="bi bi-trash3-fill delete-button" onclick="deleteButtonFunction(event)"></i>
-                </div>
-};*/
+};
