@@ -1,4 +1,4 @@
-const options = {
+/*const options = {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -41,4 +41,4 @@ window.onload = () => {
 
 window.onload = () => {
     firstfucntionPageinfo();
-};
+};*/
