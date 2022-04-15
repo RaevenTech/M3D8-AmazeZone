@@ -15,7 +15,7 @@
             integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
             crossorigin="anonymous"
         />
-
+        <link rel="stylesheet" href="style.css" />
         <style>
             .navbar {
                 background-color: #131921;
@@ -43,7 +43,10 @@
     <body>
         <nav class="navbar navbar-light">
             <a class="navbar-brand">
-                <img src="./logo.png" height="36px" />
+                <img
+                    src="https://amazepxm.com/images/logo-color.png"
+                    height="60px"
+                />
             </a>
             <a class="text-light" href="/">Home</a>
         </nav>
@@ -57,7 +60,7 @@
                         required
                         class="form-control"
                         id="name"
-                        placeholder="Iphone 11"
+                        placeholder="Example: Apple iPhone X"
                     />
                 </div>
 
@@ -67,7 +70,7 @@
                         required
                         class="form-control"
                         id="brand"
-                        placeholder="Apple"
+                        placeholder="Example: Apple"
                     />
                 </div>
 
@@ -78,7 +81,7 @@
                         type="number"
                         class="form-control"
                         id="price"
-                        placeholder="1€"
+                        placeholder="Recomended selling price in €uros"
                     />
                 </div>
 
@@ -99,7 +102,7 @@
                         required
                         class="form-control"
                         id="description"
-                        rows="3"
+                        rows="6"
                     ></textarea>
                 </div>
 
@@ -107,7 +110,7 @@
                     <button
                         id="delete-btn"
                         type="button"
-                        class="d-none btn btn-danger mr-auto w-25"
+                        class="d-none btn btn-outline-danger mr-auto"
                         onclick="deleteProduct()"
                     >
                         <ion-icon name="trash-outline"></ion-icon>
@@ -122,12 +125,12 @@
             </form>
         </div>
 
-        <div id="loader">
+        <!-- <div id="loader">
             <div class="overlay"></div>
             <div class="spinner-grow text-warning" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
-        </div>
+        </div>-->
 
         <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

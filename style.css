@@ -1,0 +1,9 @@
+body{
+    background-repeat: no-repeat;
+    background: rgb(249,106,5);
+    background: linear-gradient(180deg, rgba(249,106,5,1) 0%, rgba(114,4,231,1) 50%, rgba(249,106,5,1) 99%);%);
+}
+
+.navbar{
+    height: 80px;
+}
